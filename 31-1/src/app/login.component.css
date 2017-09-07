@@ -1,0 +1,11 @@
+﻿.popup{
+  z-index:10;
+  position: fixed;
+  width: 60%;
+  margin-left: 20%;
+  min-height:50px;
+}
+
+.hidden{
+  display:none;
+}

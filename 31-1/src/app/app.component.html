@@ -1,0 +1,23 @@
+﻿<nav class="navbar navbar-inverse">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" routerLink="/details">{{user? user.NickName : ''}}
+      </a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="home active"><a href="#">Home</a></li>
+      <li class="dialogs"><a routerLink="/dialogs" *ngIf="user"> Dialogs </a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" *ngIf="!user">
+      <li class="signup"><a routerLink="/signup"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+      <li class="login"><a routerLink="/login"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right" *ngIf="user">
+      <li class="settings"><a routerLink="/settings"><span class="glyphicon glyphicon-wrench"></span> Settings</a></li>
+      <li class="logout"><a href="#" (click)="logout(this)"><span class="glyphicon glyphicon-log-out"></span> Logout</a></li>
+    </ul>
+  </div>
+</nav>
+<div class="container">
+  <router-outlet></router-outlet>
+</div>
